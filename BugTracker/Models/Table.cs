@@ -10,11 +10,15 @@
 namespace BugTracker.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Table
     {
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()] 
         public int Id { get; set; }
+        [Required]
         public string name { get; set; }
         public string description { get; set; }
         public Nullable<System.DateTime> dateFound { get; set; }

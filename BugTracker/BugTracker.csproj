@@ -129,8 +129,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BugsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TablesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,11 +216,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\AllBugs.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
-    <Content Include="Views\Tables\Create.cshtml" />
-    <Content Include="Views\Tables\Delete.cshtml" />
-    <Content Include="Views\Tables\Details.cshtml" />
-    <Content Include="Views\Tables\Edit.cshtml" />
-    <Content Include="Views\Tables\Index.cshtml" />
+    <Content Include="Views\Bugs\Create.cshtml" />
+    <Content Include="Views\Bugs\Delete.cshtml" />
+    <Content Include="Views\Bugs\Details.cshtml" />
+    <Content Include="Views\Bugs\Edit.cshtml" />
+    <Content Include="Views\Bugs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

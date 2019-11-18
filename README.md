@@ -3,6 +3,7 @@
 
 
 **Overview**
+
 This project is a Bug or Issue Tracker Wesbite developed by Matthew Shaw for Sparta Global. Having a portal to keep track of issues as they arise during a project offers many benefits. The advantage of having this as a separate program is that it allows teams to collaborate on problems as a developer on another project may have previously found a solution to a current problem. This project will be developed in an agile manner with incremental releases. 
 ___
 **Current Features**

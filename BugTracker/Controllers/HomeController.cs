@@ -1,4 +1,4 @@
-﻿using BugTracker.Models;
+using BugTracker.Models;
 using System;
 
 using System.Collections.Generic;
@@ -38,6 +38,14 @@ namespace BugTracker
         {
 
             return View(_db.Tables.ToList());
+
+        }
+
+        public ActionResult About()
+
+        {
+
+            return View();
 
         }
 

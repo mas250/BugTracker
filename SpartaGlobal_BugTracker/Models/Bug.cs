@@ -10,17 +10,40 @@
 namespace SpartaGlobal_BugTracker.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
     
     public partial class Bug
     {
         public int bugID { get; set; }
+
+        [Display(Name ="Name")]
+        [Required(ErrorMessage ="Please input a name for the bug")]
+        [MinLength(3, ErrorMessage ="Bug name must be at least 3 characters")]
         public string name { get; set; }
+
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = "Please input a decription for the bug")]
+        [MinLength(10, ErrorMessage ="Description must be at least 10 characters")]
         public string description { get; set; }
+
+        [Display(Name = "Date Found")]
         public Nullable<System.DateTime> date_found { get; set; }
+
+        [Display(Name = "Branch Name")]
+        [Required(ErrorMessage = "Enter the branch the bug was found on")]
         public string found_on_branch { get; set; }
+
+        [Display(Name = "Found By")]
+        [Required(ErrorMessage = "Enter who discovered the bug")]
         public string found_by { get; set; }
+
+        [Display(Name = "Status")]
+        [Required(ErrorMessage = "Enter a status for the bug")]
         public string status { get; set; }
+
+        [Display(Name = "Assigned To")]
+        [Required(ErrorMessage ="Assign the bug to an Employee")]
         public int Employee_employeeID { get; set; }
     
         public virtual Employee Employee { get; set; }

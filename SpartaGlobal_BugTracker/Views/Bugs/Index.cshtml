@@ -9,61 +9,41 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-hover table-striped table-bordered">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            Bug Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
+            Assigned To
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_found)
+            Current Status
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.found_on_branch)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.found_by)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee.name)
-        </th>
+        
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date_found)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.found_on_branch)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.found_by)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.bugID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.bugID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.bugID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
 
-</table>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.status)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.bugID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.bugID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.bugID })
+    </td>
+</tr>
+                }
+
+    </table>

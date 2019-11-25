@@ -11,6 +11,7 @@ namespace SpartaGlobal_BugTracker.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Employee
     {
@@ -21,6 +22,9 @@ namespace SpartaGlobal_BugTracker.Models
         }
     
         public int employeeID { get; set; }
+        [Display(Name ="Name")]
+        [Required(ErrorMessage ="Enter an Employee's name")]
+        [MinLength(3, ErrorMessage ="Name must be at least 3 characters")]
         public string name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

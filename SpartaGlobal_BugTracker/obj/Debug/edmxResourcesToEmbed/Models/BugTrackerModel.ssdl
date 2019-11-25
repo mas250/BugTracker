@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BugDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bugs">
+    <Key>
+      <PropertyRef Name="bugID" />
+    </Key>
+    <Property Name="bugID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="date_found" Type="datetime" />
+    <Property Name="found_on_branch" Type="varchar" MaxLength="50" />
+    <Property Name="found_by" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Employee_employeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmployeeBug">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Bugs" Type="Self.Bugs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="Bugs">
+        <PropertyRef Name="Employee_employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BugDBModelStoreContainer">
+    <EntitySet Name="Bugs" EntityType="Self.Bugs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EmployeeBug" Association="Self.FK_EmployeeBug">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Bugs" EntitySet="Bugs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

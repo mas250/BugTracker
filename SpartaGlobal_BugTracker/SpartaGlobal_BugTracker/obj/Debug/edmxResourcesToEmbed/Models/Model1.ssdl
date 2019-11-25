@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BugDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BugDBModelStoreContainer">
+    <EntitySet Name="Bugs" EntityType="BugDBModel.Store.Bugs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="BugDBModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EmployeeBug" Association="BugDBModel.Store.EmployeeBug">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Bug" EntitySet="Bugs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bugs">
+    <Key>
+      <PropertyRef Name="bugID" />
+    </Key>
+    <Property Name="bugID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="description" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="date_found" Type="datetime" Nullable="true" />
+    <Property Name="found_on_branch" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Employee_employeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <Association Name="EmployeeBug">
+    <End Role="Employee" Type="BugDBModel.Store.Employees" Multiplicity="1" />
+    <End Role="Bug" Type="BugDBModel.Store.Bugs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="Bug">
+        <PropertyRef Name="Employee_employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

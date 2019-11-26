@@ -1,5 +1,10 @@
 # BugTracker
 
+**How to use**
+Pull or clone the latest version of the code from SpartaGlobalBugTracker. This includeds all required packages to run the project. Open the project solution in Visuall Studio and run it with IIS in your prefered browser.
+
+If you decided to drop the database, please remember that the foregin key restriant necessitates that an Employee should be created before a Bug.
+
 
 
 **Overview**

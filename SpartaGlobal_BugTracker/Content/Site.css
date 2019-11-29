@@ -22,4 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
-
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+dt:nth-child(even) {
+    background-color: #f2f2f2;
+}
+dd:nth-child(even) {
+    background-color: #f2f2f2;
+}
+}

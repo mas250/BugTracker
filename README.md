@@ -11,17 +11,18 @@ ___
 *Page layout and structure customised
 ___
 **Configuration Instructions**
-Pull the latest version of the code from Develop. This includeds all required packages to run the project. Open the project solution in Visuall Studio and run it with IIS in your prefered browser.
+Pull the latest version of the code from Develop. This includes all required packages to run the project. Open the project solution in Visual Studio and run it with IIS in your preferred browser.
 
 **Operating Instructions**
-Choose which entity to create by using the navigation bar at the top of the page. You will then see all existing entities. options will appear on screen for creating, deleting and reviewing information. When filling out information, feedback will be provided to the user to ensure the data is captured corrctly.
+Choose which entity to create by using the navigation bar at the top of the page. You will then see all existing entities. options will appear on screen for creating, deleting and reviewing information. When filling out information, feedback will be provided to the user to ensure the data is captured correctly.
+
 
 **Troubleshooting**
-If you decided to drop the database, please remember that the foregin key restriant necessitates that an Employee should be created before a Bug.
-Reading from the database can occasionaly take some time. thank you for your patience while the site loads. if you are waiting longer than 3 miuntes please refresh the browser window.
+If you decided to drop the database, please remember that the foreign key restraint necessitates that an Employee should be created before a Bug.
+Reading from the database can occasionally take some time. thank you for your patience while the site loads. if you are waiting longer than 3 minutes please refresh the browser window.
 
 **Upcoming Features**
-*Map databse entries to an object for use in shared views
+*Map database entries to an object for use in shared views
 *User login feature with more control over the database than standard users
 *Drop down list for bugs showing status for create page
 *Search for bugs using different options
@@ -33,7 +34,8 @@ ___
 *Selenium automated testing
 *Unit tests for controller actions
 *Unit tests for user input
-*Deployment database using Radis or Azure
+*Deployment database using Redis or Azure
 *JavaScript animations
 ___
-Last Updated : 29/11/2019
+Last Updated : 5/12/2019
+
